@@ -31,11 +31,6 @@ function configGrunt(grunt) {
         src: ["dist"],
       },
     },
-    karma: {
-      unit: {
-        configFile: "karma.conf.js",
-      },
-    },
     cssmin: {
       dist: {
         expand: true,
@@ -86,7 +81,6 @@ function configGrunt(grunt) {
   grunt.loadNpmTasks("grunt-contrib-watch");
   grunt.loadNpmTasks("grunt-contrib-clean");
   grunt.loadNpmTasks("grunt-contrib-copy");
-  grunt.loadNpmTasks("grunt-karma");
 
   grunt.registerTask("default", "Padrão...", ["dev", "connect", "watch"]);
 
