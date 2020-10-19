@@ -1,0 +1,28 @@
+<section class="categories">
+  <div class="header">
+    <h2 class="title">Categorias</h2>
+    <strong>Selecione uma categoria</strong>
+  </div>
+
+  <div class="cards">
+    <div ng-click="vm.selectCategory('dog')" class="item_cards dog">
+      <img src="assets/img-dog.svg" alt="Cachorro" />
+      <h3 class="descricao">Cachorros</h3>
+    </div>
+
+    <div ng-click="vm.selectCategory('cat')" class="item_cards cat">
+      <img src="assets/img-cat.svg" alt="Gato" />
+      <h3 class="descricao">Gatos</h3>
+    </div>
+
+    <div ng-click="vm.selectCategory('bird')" class="item_cards bird">
+      <img src="assets/img-bird.svg" alt="Passaros" />
+      <h3 class="descricao">Pássaros</h3>
+    </div>
+
+    <div ng-click="vm.selectCategory('other')" class="item_cards other">
+      <img src="assets/img-hamster.svg" alt="Outros" />
+      <h3 class="descricao">Outros</h3>
+    </div>
+  </div>
+</section>
