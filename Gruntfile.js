@@ -4,6 +4,7 @@ function configGrunt(grunt) {
   var buildDir = "dist";
   var srcDir = "./app";
   var vendorDir = "dist/vendor";
+  var assetsDir = "./app/assets";
 
   grunt.initConfig({
     copy: {
@@ -25,6 +26,12 @@ function configGrunt(grunt) {
         src: ["angular/angular.js", "angular-route/angular-route.js"],
         dest: vendorDir,
       },
+      images: {
+        expand: true,
+        cwd: assetsDir,
+        src: ["**/*.{png,jpg,svg}"],
+        dest: "dist/assets/",
+      },
     },
     clean: {
       dist: {
@@ -37,7 +44,7 @@ function configGrunt(grunt) {
         cwd: srcDir,
         src: ["**/*.css"],
         dest: buildDir,
-        ext: ".min.css",
+        // ext: ".min.css",
         extDot: "last",
       },
     },
@@ -49,7 +56,7 @@ function configGrunt(grunt) {
             cwd: srcDir,
             src: ["**/*.js"],
             dest: buildDir,
-            ext: ".min.js",
+            // ext: ".min.js",
             extDot: "last",
           },
         ],
@@ -87,6 +94,7 @@ function configGrunt(grunt) {
   grunt.registerTask("dev", "Tarefas apenas para desenvolvimento", [
     "clean",
     "copy:all",
+    "copy:images",
     "copy:vendor",
   ]);
 
@@ -94,6 +102,7 @@ function configGrunt(grunt) {
     "clean",
     "copy:dist",
     "copy:vendor",
+    "copy:images",
     "cssmin",
     "uglify",
   ]);
